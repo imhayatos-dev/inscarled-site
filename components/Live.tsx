@@ -20,6 +20,24 @@ type Live = {
   ticket: string;
 };
 
+// "2026.8.30" "2026/8/30" "2026-08-30"
+// などを確実にDateへ変換
+function parseLiveDate(dateString: string) {
+  const match = dateString.match(
+    /(\d{4})[.\-/年]\s*(\d{1,2})[.\-/月]\s*(\d{1,2})/
+  );
+
+  if (!match) {
+    return null;
+  }
+
+  const year = Number(match[1]);
+  const month = Number(match[2]);
+  const day = Number(match[3]);
+
+  return new Date(year, month - 1, day);
+}
+
 export default function Live() {
   const [lives, setLives] = useState<Live[]>([]);
   const [loading, setLoading] = useState(true);
@@ -29,8 +47,7 @@ export default function Live() {
     const fetchLives = async () => {
       const { data, error } = await supabase
         .from("lives")
-        .select("*")
-        .order("date", { ascending: true });
+        .select("*");
 
       if (error) {
         console.error("LIVE取得エラー:", error);
@@ -38,16 +55,29 @@ export default function Live() {
         return;
       }
 
-      // 今日の0:00
       const today = new Date();
+
+      // 今日の0:00
       today.setHours(0, 0, 0, 0);
 
-      // 今日以降のライブだけ表示
-      // 開催日当日は23:59までLIVEに残る
-      const upcomingLives = (data || []).filter((live) => {
-        const liveDate = new Date(`${live.date}T00:00:00`);
-        return liveDate >= today;
-      });
+      const upcomingLives = (data || [])
+        .filter((live) => {
+          const liveDate = parseLiveDate(live.date);
+
+          if (!liveDate) {
+            console.warn("日付を解析できません:", live.date);
+            return false;
+          }
+
+          // 今日を含む未来のライブ
+          return liveDate >= today;
+        })
+        .sort((a, b) => {
+          const dateA = parseLiveDate(a.date)?.getTime() ?? 0;
+          const dateB = parseLiveDate(b.date)?.getTime() ?? 0;
+
+          return dateA - dateB;
+        });
 
       setLives(upcomingLives);
       setLoading(false);
@@ -60,7 +90,9 @@ export default function Live() {
     <section id="live" className="content-section">
       <h2>LIVE</h2>
 
-      {loading && <p className="coming-soon">Loading...</p>}
+      {loading && (
+        <p className="coming-soon">Loading...</p>
+      )}
 
       {!loading && lives.length === 0 && (
         <p className="coming-soon">Coming Soon</p>
@@ -78,7 +110,9 @@ export default function Live() {
             )}
 
             <div className="live-info">
-              <p className="live-date">{live.date}</p>
+              <p className="live-date">
+                {live.date}
+              </p>
 
               <h3>{live.title}</h3>
 
@@ -92,10 +126,14 @@ export default function Live() {
                 adv {live.adv_price} / door {live.door_price}
               </p>
 
-              {live.drink && <p>{live.drink}</p>}
+              {live.drink && (
+                <p>{live.drink}</p>
+              )}
 
               {live.artists && (
-                <p className="live-artists">{live.artists}</p>
+                <p className="live-artists">
+                  {live.artists}
+                </p>
               )}
 
               <button
@@ -109,14 +147,11 @@ export default function Live() {
         ))}
       </div>
 
-      {/* 過去ライブ */}
-      {!loading && (
-        <div className="live-archive-link">
-          <Link href="/live/archive">
-            VIEW ARCHIVE →
-          </Link>
-        </div>
-      )}
+      <div className="live-archive-link">
+        <Link href="/live/archive">
+          VIEW ARCHIVE →
+        </Link>
+      </div>
 
       {selectedLive && (
         <ReservationForm
