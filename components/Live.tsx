@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 import ReservationForm from "@/components/ReservationForm";
 
@@ -27,9 +28,9 @@ export default function Live() {
   useEffect(() => {
     const fetchLives = async () => {
       const { data, error } = await supabase
-  .from("lives")
-  .select("*")
-  .eq("is_finished", false);
+        .from("lives")
+        .select("*")
+        .order("date", { ascending: true });
 
       if (error) {
         console.error("LIVE取得エラー:", error);
@@ -37,7 +38,18 @@ export default function Live() {
         return;
       }
 
-      setLives(data || []);
+      // 今日の0:00
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      // 今日以降のライブだけ表示
+      // 開催日当日は23:59までLIVEに残る
+      const upcomingLives = (data || []).filter((live) => {
+        const liveDate = new Date(`${live.date}T00:00:00`);
+        return liveDate >= today;
+      });
+
+      setLives(upcomingLives);
       setLoading(false);
     };
 
@@ -67,12 +79,21 @@ export default function Live() {
 
             <div className="live-info">
               <p className="live-date">{live.date}</p>
+
               <h3>{live.title}</h3>
+
               <p>{live.venue}</p>
-              <p>open {live.open_time} / start {live.start_time}</p>
-              <p>adv {live.adv_price} / door {live.door_price}</p>
+
+              <p>
+                open {live.open_time} / start {live.start_time}
+              </p>
+
+              <p>
+                adv {live.adv_price} / door {live.door_price}
+              </p>
 
               {live.drink && <p>{live.drink}</p>}
+
               {live.artists && (
                 <p className="live-artists">{live.artists}</p>
               )}
@@ -87,6 +108,15 @@ export default function Live() {
           </div>
         ))}
       </div>
+
+      {/* 過去ライブ */}
+      {!loading && (
+        <div className="live-archive-link">
+          <Link href="/live/archive">
+            VIEW ARCHIVE →
+          </Link>
+        </div>
+      )}
 
       {selectedLive && (
         <ReservationForm

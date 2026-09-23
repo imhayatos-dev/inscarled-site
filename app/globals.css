@@ -1238,3 +1238,52 @@ body {
     margin-bottom: 28px;
   }
 }
+
+
+.live-archive-link {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.live-archive-link a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.live-archive-link a:hover {
+  opacity: 1;
+}
+
+.archive-page {
+  min-height: 100vh;
+  padding: 100px 20px;
+  color: #fff;
+}
+
+.archive-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.archive-container h1 {
+  margin: 40px 0 60px;
+  font-size: 32px;
+  letter-spacing: 0.1em;
+}
+
+.archive-back {
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+.archive-back:hover {
+  opacity: 1;
+}
