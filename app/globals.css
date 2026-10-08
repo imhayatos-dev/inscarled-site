@@ -1,30 +1,47 @@
 html {
+
   scroll-behavior: smooth;
+
 }
 
 * {
+
   margin: 0;
+
   padding: 0;
+
   box-sizing: border-box;
+
 }
 
 body {
+
   background: #0d1117;
+
   color: white;
+
   font-family: serif;
+
 }
 
 .hero {
+
   height: 100vh;
 
   background:
+
     linear-gradient(
+
       rgba(0, 0, 0, 0.45),
+
       rgba(0, 0, 0, 0.7)
+
     ),
+
     url("/hero-bg.PNG");
 
   background-size: cover;
+
   background-position: center;
 
   background-attachment: fixed;
@@ -32,18 +49,23 @@ body {
   overflow: hidden;
 
   position: relative;
+
 }
 
 .header {
+
   position: fixed;
 
   top: 0;
+
   left: 0;
 
   width: 100%;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   padding: 40px 80px;
@@ -53,9 +75,11 @@ body {
   backdrop-filter: blur(8px);
 
   background: rgba(0, 0, 0, 0.15);
+
 }
 
 .header-logo {
+
   position: absolute;
 
   left: 80px;
@@ -65,11 +89,15 @@ body {
   width: auto;
 
   filter:
+
     drop-shadow(0 0 8px rgba(255,255,255,0.25))
+
     drop-shadow(0 0 20px rgba(255,255,255,0.1));
+
 }
 
 .hero-logo {
+
   width: 750px;
 
   max-width: 90vw;
@@ -77,58 +105,75 @@ body {
   height: auto;
 
   margin-bottom: 20px;
+
 }
 
 .hero-content {
+
   position: absolute;
 
   top: 50%;
+
   left: 50%;
 
   transform: translate(-50%, -50%);
 
   text-align: center;
+
 }
 
 .hero-content h1 {
+
   font-size: 8rem;
 
   font-weight: 300;
 
   letter-spacing: 5px;
+
 }
 
 .hero-content p {
+
   font-size: 1.5rem;
 
   margin-top: 20px;
+
 }
 
 .hero-content span {
+
   display: block;
 
   margin-top: 10px;
 
   opacity: 0.7;
+
 }
 
 .news {
+
   padding: 120px;
+
 }
 
 .news h2 {
+
   margin-bottom: 40px;
 
   letter-spacing: 5px;
+
 }
 
 .cards {
+
   display: flex;
 
   gap: 30px;
+
 }
 
 .card {
+
   flex: 1;
 
   padding: 30px;
@@ -138,13 +183,17 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 
   backdrop-filter: blur(10px);
+
 }
 
 .card h3 {
+
   margin-top: 15px;
+
 }
 
 .menu {
+
   display: flex;
 
   gap: 55px;
@@ -154,9 +203,11 @@ body {
   letter-spacing: 3px;
 
   font-size: 14px;
+
 }
 
 .menu li {
+
   position: relative;
 
   color: #9f9f9f;
@@ -166,33 +217,41 @@ body {
   cursor: pointer;
 
   transition: all 0.3s ease;
+
 }
 
 .menu li a {
+
   color: inherit;
 
   text-decoration: none;
+
 }
 
 .menu li:hover {
+
   color: white;
 
   opacity: 1;
 
   transform: translateY(-2px);
+
 }
 
 /* 下線 */
 
 .menu li::after {
+
   content: "";
 
   position: absolute;
 
   left: 0;
+
   bottom: -8px;
 
   width: 100%;
+
   height: 1px;
 
   background: white;
@@ -202,18 +261,25 @@ body {
   transform-origin: left;
 
   transition: transform 0.3s ease;
+
 }
 
 .menu li:hover::after {
+
   transform: scaleX(1);
+
 }
 
 .menu li:hover {
+
   opacity: 1;
 
   transform: translateY(-2px);
+
 }
+
 .socials {
+
   position: absolute;
 
   right: 80px;
@@ -221,9 +287,11 @@ body {
   display: flex;
 
   gap: 20px;
+
 }
 
 .socials a {
+
   color: white;
 
   opacity: 0.7;
@@ -231,19 +299,25 @@ body {
   text-decoration: none;
 
   transition: all 0.3s ease;
+
 }
 
 .socials a:hover {
+
   opacity: 1;
 
   transform: translateY(-2px) scale(1.08);
+
 }
 
 .socials a svg {
+
   font-size: 28px;
+
 }
 
 .scroll-indicator {
+
   position: absolute;
 
   bottom: 40px;
@@ -261,55 +335,73 @@ body {
   gap: 8px;
 
   z-index: 10;
+
 }
 
 .scroll-indicator span {
+
   font-size: 12px;
 
   letter-spacing: 4px;
 
   opacity: 0.7;
+
 }
 
 .arrow {
+
   font-size: 20px;
 
   opacity: 0.7;
 
   animation: floatArrow 1.8s ease-in-out infinite;
+
 }
 
 @keyframes floatArrow {
+
   0% {
+
     transform: translateY(0);
+
   }
 
   50% {
+
     transform: translateY(8px);
+
   }
 
   100% {
+
     transform: translateY(0);
+
   }
+
 }
 
 .content-section {
+
   min-height: 80vh;
 
   padding: 140px 120px;
 
   border-top: 1px solid rgba(255,255,255,0.08);
+
 }
 
 .content-section h2 {
+
   font-size: 3rem;
 
   letter-spacing: 8px;
 
   margin-bottom: 40px;
+
 }
 
 .about-container {
+
   display: flex;
 
   align-items: center;
@@ -317,21 +409,27 @@ body {
   gap: 80px;
 
   margin-top: 60px;
+
 }
 
 .about-image {
+
   width: 400px;
 
   border-radius: 8px;
+
 }
 
 .about-text {
+
   max-width: 600px;
 
   line-height: 2;
+
 }
 
 .live-card {
+
   margin-top: 40px;
 
   padding: 40px;
@@ -339,9 +437,11 @@ body {
   border: 1px solid rgba(255,255,255,.1);
 
   background: rgba(255,255,255,.03);
+
 }
 
 .hamburger {
+
   display: none;
 
   position: absolute;
@@ -363,44 +463,59 @@ body {
   height: 50px;
 
   z-index: 3000;
+
 }
 
 @media (max-width: 768px) {
 
   .header {
+
     padding: 20px 24px;
+
   }
 
   .header-logo {
+
     left: 16px;
 
     height: 60px;
+
   }
 
   .hero-logo {
+
     width: 90vw;
+
   }
 
   .socials {
+
     display: none;
+
   }
 
   .hamburger {
+
     display: block;
 
     right: 20px;
 
     z-index: 3000;
+
   }
 
   .menu {
+
     display: none !important;
+
   }
 
   .menu.active {
+
     position: fixed;
 
     top: 0;
+
     right: 0;
 
     width: 280px;
@@ -422,185 +537,289 @@ body {
     backdrop-filter: blur(12px);
 
     z-index: 2000;
+
   }
 
   .menu li {
+
     font-size: 20px;
+
   }
 
   .content-section {
+
     padding: 100px 24px;
+
   }
 
   .cards {
+
     flex-direction: column;
+
   }
 
   .about-container {
+
     flex-direction: column;
+
   }
 
   .about-image {
+
     width: 100%;
+
     max-width: 400px;
+
   }
 
   .live-card {
+
     padding: 24px;
+
   }
+
 }
 
 @media (max-width: 1024px) {
 
   .menu {
+
     gap: 25px;
+
   }
 
   .header-logo {
+
     height: 90px;
+
   }
 
   .socials a svg {
+
     font-size: 24px;
+
   }
+
 }
 
 .live-card {
+
   display: flex;
+
   gap: 48px;
+
   align-items: center;
 
   margin-top: 40px;
+
   padding: 40px;
 
   border: 1px solid rgba(255,255,255,.1);
+
   background: rgba(255,255,255,.03);
+
 }
 
 .live-image {
+
   width: 360px;
+
   max-width: 100%;
+
   height: auto;
+
 }
 
 .live-info {
+
   line-height: 2;
+
 }
 
 .live-date {
+
   letter-spacing: 3px;
+
   color: #9f9f9f;
+
 }
 
 .live-info h3 {
+
   font-size: 2rem;
+
   margin: 12px 0 20px;
+
 }
 
 .live-artists {
+
   margin-top: 20px;
+
   color: #d8d8d8;
+
 }
 
 @media (max-width: 768px) {
+
   .live-card {
+
     flex-direction: column;
+
     align-items: flex-start;
+
     padding: 24px;
+
   }
 
   .live-image {
+
     width: 100%;
+
   }
 
   .live-info h3 {
+
     font-size: 1.6rem;
+
   }
+
 }
 
 .admin-page {
+
   min-height: 100vh;
+
   padding: 120px;
+
   background: #0d1117;
+
   color: white;
+
 }
 
 .admin-page h1 {
+
   font-size: 3rem;
+
   letter-spacing: 4px;
+
   margin-bottom: 60px;
+
 }
 
 .admin-section {
+
   padding: 40px;
+
   border: 1px solid rgba(255,255,255,0.1);
+
   background: rgba(255,255,255,0.03);
+
 }
 
 .admin-section h2 {
+
   margin-bottom: 20px;
+
 }
 
 .admin-button {
+
   margin-top: 30px;
+
   padding: 14px 28px;
+
   background: white;
+
   color: black;
+
   border: none;
+
   cursor: pointer;
+
 }
 
 .admin-form {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 16px;
+
 }
 
 .admin-form h2 {
+
   margin-bottom: 20px;
+
 }
 
 .admin-form input,
+
 .admin-form textarea {
+
   width: 100%;
+
   padding: 14px 16px;
 
   background: rgba(255,255,255,0.06);
+
   border: 1px solid rgba(255,255,255,0.15);
 
   color: white;
+
   font-family: inherit;
+
 }
 
 .admin-form textarea {
+
   min-height: 120px;
+
   resize: vertical;
+
 }
 
 .admin-form button {
+
   margin-top: 20px;
+
   padding: 14px 28px;
 
   background: white;
+
   color: black;
 
   border: none;
+
   cursor: pointer;
+
 }
 
 .admin-message {
+
   margin-top: 16px;
+
   color: #9f9f9f;
+
   letter-spacing: 2px;
+
 }
 
 .live-list {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 40px;
+
 }
 
 .ticket-button {
+
   display: inline-block;
 
   margin-top: 24px;
@@ -620,35 +839,49 @@ body {
   cursor: pointer;
 
   transition: color .3s ease, transform .3s ease;
+
 }
 
 .ticket-button:hover {
+
   color: #d61f1f;
 
   transform: translateX(4px);
+
 }
 
 .file-label {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
 
   color: #9f9f9f;
+
   letter-spacing: 2px;
+
 }
 
 .file-label input {
+
   cursor: pointer;
+
 }
 
 .reservation-form {
+
   width: 100%;
+
   max-width: 520px;
 
   margin: 80px auto 0;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 18px;
 
   padding: 36px;
@@ -658,9 +891,11 @@ body {
   background: rgba(255,255,255,.03);
 
   border-radius: 10px;
+
 }
 
 .reservation-form h2 {
+
   text-align: center;
 
   font-size: 2rem;
@@ -668,40 +903,59 @@ body {
   letter-spacing: 6px;
 
   margin-bottom: 20px;
+
 }
 
 .reservation-form label {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
 
   color: #9f9f9f;
+
   letter-spacing: 2px;
+
 }
 
 .reservation-form input,
+
 .reservation-form select,
+
 .reservation-form textarea {
+
   padding: 12px 14px;
 
   font-size: 14px;
+
 }
 
 .reservation-form textarea {
+
   min-height: 120px;
+
   resize: vertical;
+
 }
 
 .checkbox-label {
+
   flex-direction: row !important;
+
   align-items: center;
+
 }
 
 .checkbox-label input {
+
   width: auto;
+
 }
 
 .reservation-form button {
+
   margin-top: 20px;
 
   padding: 14px;
@@ -717,82 +971,115 @@ body {
   color: white;
 
   transition: .3s;
+
 }
 
 .reservation-form button:hover {
+
   background: white;
 
   color: black;
+
 }
 
 .complete-page {
+
   min-height: 100vh;
+
   padding: 160px 120px;
 
   background: #0d1117;
+
   color: white;
+
 }
 
 .complete-page h1 {
+
   font-size: 3rem;
+
   letter-spacing: 6px;
+
   margin-bottom: 40px;
+
 }
 
 .complete-page p {
+
   line-height: 2;
+
   color: #cfcfcf;
+
 }
 
 .back-home {
+
   display: inline-block;
 
   margin-top: 40px;
+
   padding: 14px 28px;
 
   border: 1px solid rgba(255,255,255,0.4);
 
   color: white;
+
   text-decoration: none;
 
   letter-spacing: 3px;
+
 }
 
 .back-home:hover {
+
   background: white;
+
   color: black;
+
 }
 
 .reservation-modal {
+
   position: fixed;
+
   inset: 0;
 
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 
   background: rgba(0, 0, 0, 0.75);
 
   z-index: 5000;
+
 }
 
 .reservation-modal-content {
+
   position: relative;
 
   width: 90%;
+
   max-width: 520px;
 
   max-height: 90vh;
+
   overflow-y: auto;
+
 }
 
 .modal-close {
+
   position: absolute;
 
   top: 16px;
+
   right: 18px;
 
   background: transparent;
+
   border: none;
 
   color: white;
@@ -802,9 +1089,11 @@ body {
   cursor: pointer;
 
   z-index: 10;
+
 }
 
 .selected-live {
+
   margin-bottom: 24px;
 
   color: #cfcfcf;
@@ -812,13 +1101,17 @@ body {
   line-height: 1.8;
 
   letter-spacing: 1px;
+
 }
 
 .reservation-form {
+
   width: 100%;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 18px;
 
   padding: 42px 36px 36px;
@@ -828,9 +1121,11 @@ body {
   background: rgba(10, 14, 20, 0.96);
 
   border-radius: 10px;
+
 }
 
 .reservation-form h2 {
+
   text-align: center;
 
   font-size: 2rem;
@@ -838,20 +1133,27 @@ body {
   letter-spacing: 6px;
 
   margin-bottom: 10px;
+
 }
 
 .reservation-form label {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
 
   color: #9f9f9f;
 
   letter-spacing: 2px;
+
 }
 
 .reservation-form input,
+
 .reservation-form textarea {
+
   padding: 12px 14px;
 
   background: rgba(255,255,255,0.06);
@@ -861,25 +1163,33 @@ body {
   color: white;
 
   font-family: inherit;
+
 }
 
 .reservation-form textarea {
+
   min-height: 100px;
 
   resize: vertical;
+
 }
 
 .checkbox-label {
+
   flex-direction: row !important;
 
   align-items: center;
+
 }
 
 .checkbox-label input {
+
   width: auto;
+
 }
 
 .reservation-form button[type="submit"] {
+
   margin-top: 16px;
 
   padding: 14px;
@@ -895,23 +1205,31 @@ body {
   cursor: pointer;
 
   transition: .3s;
+
 }
 
 .reservation-form button[type="submit"]:hover {
+
   background: white;
 
   color: black;
+
 }
 
 .reservation-list {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 20px;
 
   margin-top: 30px;
+
 }
 
 .reservation-card {
+
   padding: 24px;
 
   border: 1px solid rgba(255,255,255,0.1);
@@ -919,19 +1237,25 @@ body {
   background: rgba(255,255,255,0.03);
 
   line-height: 2;
+
 }
 
 .reservation-card strong {
+
   color: #9f9f9f;
+
 }
 
 .maintenance-page {
+
   min-height: 100vh;
 
   display: flex;
+
   flex-direction: column;
 
   justify-content: center;
+
   align-items: center;
 
   text-align: center;
@@ -941,649 +1265,1047 @@ body {
   color: white;
 
   padding: 30px;
+
 }
 
 .maintenance-page h2 {
+
   font-size: 2rem;
 
   margin-bottom: 30px;
+
 }
 
 .maintenance-page p {
+
   line-height: 2;
 
   color: #bfbfbf;
+
 }
 
 .maintenance-logo {
+
   width: 320px;
+
   max-width: 80%;
 
   margin-bottom: 40px;
 
   /* 少しだけ白く発光 */
+
   filter: drop-shadow(0 0 8px rgba(255,255,255,0.18));
 
   /* フェードイン */
+
   opacity: 0;
+
   animation: fadeInLogo 2s ease forwards;
+
 }
 
 @keyframes fadeInLogo {
+
   from {
+
     opacity: 0;
+
     transform: translateY(10px);
+
     filter: drop-shadow(0 0 0 rgba(255,255,255,0));
+
   }
 
   to {
+
     opacity: 1;
+
     transform: translateY(0);
+
     filter: drop-shadow(0 0 8px rgba(255,255,255,0.18));
+
   }
+
 }
+
 .news-list {
+
   display: flex;
+
   flex-direction: column;
 
   margin-top: 40px;
 
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+
 }
 
 .news-list-item {
+
   position: relative;
 
   display: grid;
+
   grid-template-columns: 140px 1fr auto;
+
   align-items: center;
+
   gap: 30px;
 
   padding: 26px 10px;
 
   color: white;
+
   text-decoration: none;
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 
   transition:
+
     color 0.3s ease,
-    background 0.3s ease,
+
+background 0.3s ease,
+
     padding-left 0.3s ease;
+
 }
 
 .news-list-item:hover {
+
   color: #d61f1f;
+
   background: rgba(255, 255, 255, 0.025);
+
   padding-left: 18px;
+
 }
 
 .news-date {
+
   margin: 0;
 
   color: #8f8f8f;
 
   font-size: 13px;
+
   letter-spacing: 2px;
+
 }
 
 .news-list-item h3 {
+
   margin: 0;
 
   font-size: 1.05rem;
+
   font-weight: 400;
+
   letter-spacing: 2px;
+
 }
 
 .news-arrow {
+
   font-size: 20px;
 
   transition: transform 0.3s ease;
+
 }
 
 .news-list-item:hover .news-arrow {
+
   transform: translateX(5px);
+
 }
 
 @media (max-width: 768px) {
+
   .news-list-item {
+
     grid-template-columns: 1fr auto;
+
     gap: 10px 20px;
 
     padding: 22px 4px;
+
   }
 
   .news-date {
+
     grid-column: 1 / -1;
+
   }
 
   .news-list-item h3 {
+
     font-size: 0.95rem;
+
     line-height: 1.6;
+
   }
+
 }
 
 .admin-checkbox-label {
+
   display: flex;
+
   flex-direction: row;
+
   align-items: center;
+
   gap: 10px;
 
   color: #bfbfbf;
+
   letter-spacing: 1px;
+
 }
 
 .admin-checkbox-label input {
+
   width: auto;
+
 }
 
 .music-list {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 80px;
 
   margin-top: 50px;
+
 }
 
 .music-item {
+
   display: grid;
+
   grid-template-columns: minmax(280px, 460px) 1fr;
+
   align-items: start;
+
   gap: 70px;
+
 }
 
 .music-image-wrapper {
+
   width: 100%;
+
   aspect-ratio: 1 / 1;
 
   overflow: hidden;
 
   background: rgba(255, 255, 255, 0.03);
+
   border: 1px solid rgba(255, 255, 255, 0.1);
+
 }
 
 .music-image {
+
   display: block;
 
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
+
 }
 
 .music-image-placeholder {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   width: 100%;
+
   height: 100%;
 
   color: #777;
+
   font-size: 12px;
+
   letter-spacing: 3px;
+
 }
 
 .music-info {
+
   padding-top: 10px;
+
 }
 
 .music-type {
+
   margin: 0 0 14px;
 
   color: #888;
 
   font-size: 12px;
+
   letter-spacing: 3px;
+
   text-transform: uppercase;
+
 }
 
 .music-info h3 {
+
   margin: 0 0 22px;
 
   color: white;
 
   font-size: clamp(1.8rem, 4vw, 3rem);
+
   font-weight: 400;
+
   letter-spacing: 2px;
+
   line-height: 1.3;
+
 }
 
 .music-price {
+
   margin: 0 0 28px;
 
   color: white;
 
   font-size: 1.05rem;
+
   letter-spacing: 2px;
+
 }
 
 .music-description {
+
   margin: 0 0 36px;
 
   color: #bcbcbc;
 
   font-size: 0.95rem;
+
   letter-spacing: 1px;
+
   line-height: 2;
+
   white-space: pre-line;
+
 }
 
 .music-tracks {
+
   padding-top: 28px;
 
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+
 }
 
 .music-tracks h4 {
+
   margin: 0 0 20px;
 
   color: #888;
 
   font-size: 12px;
+
   font-weight: 400;
+
   letter-spacing: 3px;
+
 }
 
 .music-tracks ol {
+
   display: flex;
+
   flex-direction: column;
+
   gap: 16px;
 
   margin: 0;
+
   padding: 0;
 
   list-style: none;
+
 }
 
 .music-tracks li {
+
   display: grid;
+
   grid-template-columns: 40px 1fr;
+
   gap: 15px;
 
   color: #e5e5e5;
 
   font-size: 0.95rem;
+
   letter-spacing: 1px;
+
   line-height: 1.6;
+
 }
 
 .track-number {
+
   color: #666;
+
   font-size: 12px;
+
   letter-spacing: 2px;
+
 }
 
 @media (max-width: 768px) {
+
   .music-list {
+
     gap: 60px;
 
     margin-top: 35px;
+
   }
 
   .music-item {
+
     grid-template-columns: 1fr;
+
     gap: 32px;
+
   }
 
   .music-info {
+
     padding-top: 0;
+
   }
 
   .music-info h3 {
+
     margin-bottom: 18px;
+
   }
 
   .music-description {
+
     margin-bottom: 28px;
+
   }
+
 }
 
-
 .live-archive-link {
+
   margin-top: 50px;
+
   text-align: center;
+
 }
 
 .live-archive-link a {
+
   color: #fff;
+
   text-decoration: none;
+
   font-size: 14px;
+
   letter-spacing: 0.15em;
+
   opacity: 0.6;
+
   transition: opacity 0.3s ease;
+
 }
 
 .live-archive-link a:hover {
+
   opacity: 1;
+
 }
 
 .archive-page {
+
   min-height: 100vh;
+
   padding: 100px 20px;
+
   color: #fff;
+
 }
 
 .archive-container {
+
   width: 100%;
+
   max-width: 1000px;
+
   margin: 0 auto;
+
 }
 
 .archive-container h1 {
+
   margin: 40px 0 60px;
+
   font-size: 32px;
+
   letter-spacing: 0.1em;
+
 }
 
 .archive-back {
+
   color: #fff;
+
   text-decoration: none;
+
   font-size: 13px;
+
   letter-spacing: 0.15em;
+
   opacity: 0.6;
+
 }
 
 .archive-back:hover {
+
   opacity: 1;
+
 }
 
-
 /* ========================================
+
    MUSIC PREVIEW PLAYER
+
 ======================================== */
 
 .music-track-row {
+
   display: flex;
+
   align-items: center;
+
   gap: 14px;
+
   width: 100%;
+
 }
 
 .music-track-title {
+
   flex: 1;
+
   min-width: 0;
+
   line-height: 1.6;
+
 }
 
 .music-play-button {
+
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   flex-shrink: 0;
 
   width: 36px;
+
   height: 36px;
 
   padding: 0;
+
   border: 1px solid rgba(255, 255, 255, 0.4);
+
   border-radius: 50%;
 
   background: transparent;
+
   color: #fff;
 
   font-size: 13px;
+
   cursor: pointer;
 
   transition:
-    background 0.25s ease,
+
+background 0.25s ease,
+
     border-color 0.25s ease,
+
     transform 0.25s ease;
+
 }
 
 .music-play-button:hover {
+
   background: rgba(180, 30, 45, 0.3);
+
   border-color: #c43b4a;
+
   transform: scale(1.05);
+
 }
 
 .music-play-button.is-playing {
+
   background: rgba(180, 30, 45, 0.4);
+
   border-color: #c43b4a;
+
 }
 
 .music-preview-player {
+
   margin-top: 10px;
+
   padding: 12px 0 16px 38px;
+
 }
 
 .music-preview-label {
+
   display: block;
+
   margin-bottom: 10px;
 
   color: rgba(255, 255, 255, 0.5);
+
   font-size: 10px;
+
   letter-spacing: 0.2em;
+
 }
 
 .music-preview-controls {
+
   display: flex;
+
   align-items: center;
+
   gap: 12px;
+
   width: 100%;
+
 }
 
 .music-preview-time {
+
   flex-shrink: 0;
+
   min-width: 32px;
 
   color: rgba(255, 255, 255, 0.65);
+
   font-size: 11px;
+
   font-variant-numeric: tabular-nums;
+
 }
 
 .music-preview-seek {
+
   flex: 1;
+
   min-width: 0;
+
   height: 4px;
 
   appearance: none;
+
   -webkit-appearance: none;
 
   background: rgba(255, 255, 255, 0.25);
+
   border-radius: 4px;
 
   cursor: pointer;
+
 }
 
 .music-preview-seek::-webkit-slider-thumb {
+
   appearance: none;
+
   -webkit-appearance: none;
 
   width: 12px;
+
   height: 12px;
 
   background: #c43b4a;
+
   border-radius: 50%;
+
   cursor: pointer;
+
 }
 
 .music-preview-seek::-moz-range-thumb {
+
   width: 12px;
+
   height: 12px;
 
   background: #c43b4a;
+
   border: none;
+
   border-radius: 50%;
+
   cursor: pointer;
+
 }
 
 .music-preview-seek:focus-visible,
+
 .music-play-button:focus-visible {
+
   outline: 2px solid #fff;
+
   outline-offset: 4px;
+
 }
 
 @media (max-width: 768px) {
+
   .music-track-row {
+
     gap: 10px;
+
   }
 
   .music-track-title {
+
     font-size: 13px;
+
   }
 
   .music-play-button {
+
     width: 34px;
+
     height: 34px;
+
   }
 
   .music-preview-player {
+
     padding-left: 0;
+
   }
 
   .music-preview-controls {
+
     gap: 8px;
+
   }
+
 }
 
-
 /* ========================================
+
    MUSIC PLAYER LAYOUT FIX
+
 ======================================== */
 
 .music-tracks {
+
   width: 100%;
+
   min-width: 0;
+
 }
 
 .music-tracks ol {
+
   display: flex;
+
   flex-direction: column;
+
   width: 100%;
+
   min-width: 0;
+
   padding: 0;
+
   margin: 0;
+
   list-style: none;
+
 }
 
 /* 既存のliレイアウトを上書き */
+
 .music-tracks ol > li.music-track-item {
+
   display: flex;
+
   flex-direction: column;
+
   align-items: stretch;
+
   width: 100%;
+
   min-width: 0;
+
   box-sizing: border-box;
+
   padding: 20px 0;
+
   margin: 0;
+
   gap: 12px;
+
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+
 }
 
 .music-track-heading {
+
   display: flex;
+
   align-items: baseline;
+
   gap: 14px;
+
   width: 100%;
+
   min-width: 0;
+
 }
 
 .music-track-heading .track-number {
+
   flex: 0 0 28px;
+
   width: 28px;
+
   white-space: nowrap;
+
 }
 
 .music-track-heading .music-track-title {
+
   display: block;
+
   flex: 1 1 auto;
+
   width: auto;
+
   min-width: 0;
+
   overflow-wrap: anywhere;
+
   word-break: normal;
+
   line-height: 1.7;
+
   font-size: 14px;
+
 }
 
 /* 曲名の下の再生コントロール */
+
 .music-track-player {
+
   display: flex;
+
   align-items: center;
+
   gap: 16px;
+
   width: 100%;
+
   min-width: 0;
+
   padding-left: 42px;
+
   box-sizing: border-box;
+
 }
 
 .music-track-player .music-play-button {
+
   display: flex;
+
   flex: 0 0 38px;
+
   align-items: center;
+
   justify-content: center;
+
   width: 38px;
+
   height: 38px;
+
   padding: 0;
+
   border: 1px solid rgba(255, 255, 255, 0.45);
+
   border-radius: 50%;
+
   background: transparent;
+
   color: white;
+
   cursor: pointer;
+
 }
 
 .music-track-player .music-play-button.is-playing {
+
   border-color: #c43b4a;
+
   background: rgba(180, 30, 45, 0.35);
+
 }
 
 .music-player-details {
+
   flex: 1 1 auto;
+
   min-width: 0;
+
 }
 
 .music-player-details .music-preview-label {
+
   display: block;
+
   margin-bottom: 8px;
+
   font-size: 10px;
+
   letter-spacing: 0.15em;
+
   opacity: 0.55;
+
 }
 
 .music-player-details .music-preview-controls {
+
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   width: 100%;
+
   min-width: 0;
+
 }
 
 .music-preview-controls .music-preview-seek {
+
   flex: 1 1 auto;
+
   width: 100%;
+
   min-width: 0;
+
 }
 
 .music-preview-controls .music-preview-time {
+
   flex: 0 0 auto;
+
   font-size: 11px;
+
   white-space: nowrap;
+
 }
 
 /* MUSIC全体の横幅制限による崩れを防ぐ */
+
 .music-item .music-info {
+
   min-width: 0;
+
 }
 
 @media (max-width: 768px) {
+
   .music-tracks ol > li.music-track-item {
+
     padding: 18px 0;
+
   }
 
   .music-track-heading {
+
     gap: 10px;
+
   }
 
   .music-track-heading .music-track-title {
+
     font-size: 13px;
+
   }
 
   .music-track-player {
+
     padding-left: 0;
+
     gap: 12px;
+
   }
 
   .music-player-details .music-preview-controls {
+
     gap: 7px;
+
+  }
+
+}
+
+/* ========================================
+   iPhone / MOBILE HERO BACKGROUND FIX
+   Desktop styles remain unchanged.
+======================================== */
+@media (max-width: 768px) {
+  .hero {
+    position: relative;
+    isolation: isolate;
+    background-image: none;
+    background-attachment: scroll;
+    background-color: #0d1117;
+    min-height: 100svh;
+    height: 100svh;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.7)),
+      url("/hero-bg.PNG");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .hero-content {
+    z-index: 1;
   }
 }
