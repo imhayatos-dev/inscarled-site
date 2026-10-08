@@ -18,15 +18,18 @@ const siteUrl = "https://inscarled-site.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
+  // Google Search Console 所有権確認
   verification: {
-  google: "HsbW2y1hnD9Hs5rseUOrM4evmPChJxcDbrnqrVStGiM",
-},
+    google: "HsbW2y1hnD9Hs5rseUOrM4evmPChJxcDbrnqrVStGiM",
+  },
 
+  // サイトタイトル
   title: {
     default: "inScarled（インスカーレッド）| Official Website",
     template: "%s | inScarled Official Website",
   },
 
+  // 検索結果に表示する説明文
   description:
     "青森を拠点に活動するオルタナティブロックバンド、inScarled（インスカーレッド）の公式サイト。最新ライブ情報、楽曲、試聴音源、ニュースを掲載。",
 
@@ -45,32 +48,51 @@ export const metadata: Metadata = {
     canonical: "/",
   },
 
+  // ファビコン（ブラウザ・Google検索結果）
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+      },
+      {
+        url: "/icon.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+    shortcut: "/favicon.ico",
+  },
+
+  // LINE・Instagram・Facebook等の共有画像
   openGraph: {
-  type: "website",
-  locale: "ja_JP",
-  url: "https://inscarled-site.vercel.app/",
-  siteName: "inScarled Official Website",
-  title: "inScarled（インスカーレッド）| Official Website",
-  description:
-    "青森を拠点に活動するオルタナティブロックバンド、inScarledの公式サイト。",
-  images: [
-    {
-      url: "/og-image.png",
-      width: 1200,
-      height: 630,
-      alt: "inScarled Official Website",
-    },
-  ],
-},
+    type: "website",
+    locale: "ja_JP",
+    url: siteUrl,
+    siteName: "inScarled Official Website",
+    title: "inScarled（インスカーレッド）| Official Website",
+    description:
+      "青森を拠点に活動するオルタナティブロックバンド、inScarledの公式サイト。",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "inScarled Official Website",
+      },
+    ],
+  },
 
-twitter: {
-  card: "summary_large_image",
-  title: "inScarled（インスカーレッド）| Official Website",
-  description:
-    "青森を拠点に活動するオルタナティブロックバンド、inScarledの公式サイト。",
-  images: ["/og-image.png"],
-},
+  // X（旧Twitter）の共有画像
+  twitter: {
+    card: "summary_large_image",
+    title: "inScarled（インスカーレッド）| Official Website",
+    description:
+      "青森を拠点に活動するオルタナティブロックバンド、inScarledの公式サイト。",
+    images: ["/og-image.png"],
+  },
 
+  // 検索エンジンによるインデックスを許可
   robots: {
     index: true,
     follow: true,
