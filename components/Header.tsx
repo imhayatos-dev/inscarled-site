@@ -65,9 +65,14 @@ export default function Header() {
           <FaXTwitter />
         </a>
 
-        <a href="#">
-          <FaInstagram />
-        </a>
+        <a
+  href="https://www.instagram.com/inscarled/"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="inScarled Instagram"
+>
+  <FaInstagram />
+</a>
 
         <a href="#">
           <FaYoutube />
