@@ -1287,3 +1287,303 @@ body {
 .archive-back:hover {
   opacity: 1;
 }
+
+
+/* ========================================
+   MUSIC PREVIEW PLAYER
+======================================== */
+
+.music-track-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+}
+
+.music-track-title {
+  flex: 1;
+  min-width: 0;
+  line-height: 1.6;
+}
+
+.music-play-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #fff;
+
+  font-size: 13px;
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.music-play-button:hover {
+  background: rgba(180, 30, 45, 0.3);
+  border-color: #c43b4a;
+  transform: scale(1.05);
+}
+
+.music-play-button.is-playing {
+  background: rgba(180, 30, 45, 0.4);
+  border-color: #c43b4a;
+}
+
+.music-preview-player {
+  margin-top: 10px;
+  padding: 12px 0 16px 38px;
+}
+
+.music-preview-label {
+  display: block;
+  margin-bottom: 10px;
+
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.music-preview-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.music-preview-time {
+  flex-shrink: 0;
+  min-width: 32px;
+
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.music-preview-seek {
+  flex: 1;
+  min-width: 0;
+  height: 4px;
+
+  appearance: none;
+  -webkit-appearance: none;
+
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+
+  cursor: pointer;
+}
+
+.music-preview-seek::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+
+  width: 12px;
+  height: 12px;
+
+  background: #c43b4a;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.music-preview-seek::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+
+  background: #c43b4a;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.music-preview-seek:focus-visible,
+.music-play-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .music-track-row {
+    gap: 10px;
+  }
+
+  .music-track-title {
+    font-size: 13px;
+  }
+
+  .music-play-button {
+    width: 34px;
+    height: 34px;
+  }
+
+  .music-preview-player {
+    padding-left: 0;
+  }
+
+  .music-preview-controls {
+    gap: 8px;
+  }
+}
+
+
+/* ========================================
+   MUSIC PLAYER LAYOUT FIX
+======================================== */
+
+.music-tracks {
+  width: 100%;
+  min-width: 0;
+}
+
+.music-tracks ol {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* 既存のliレイアウトを上書き */
+.music-tracks ol > li.music-track-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 20px 0;
+  margin: 0;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.music-track-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  width: 100%;
+  min-width: 0;
+}
+
+.music-track-heading .track-number {
+  flex: 0 0 28px;
+  width: 28px;
+  white-space: nowrap;
+}
+
+.music-track-heading .music-track-title {
+  display: block;
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* 曲名の下の再生コントロール */
+.music-track-player {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-width: 0;
+  padding-left: 42px;
+  box-sizing: border-box;
+}
+
+.music-track-player .music-play-button {
+  display: flex;
+  flex: 0 0 38px;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.music-track-player .music-play-button.is-playing {
+  border-color: #c43b4a;
+  background: rgba(180, 30, 45, 0.35);
+}
+
+.music-player-details {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.music-player-details .music-preview-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  opacity: 0.55;
+}
+
+.music-player-details .music-preview-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+}
+
+.music-preview-controls .music-preview-seek {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+}
+
+.music-preview-controls .music-preview-time {
+  flex: 0 0 auto;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+/* MUSIC全体の横幅制限による崩れを防ぐ */
+.music-item .music-info {
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .music-tracks ol > li.music-track-item {
+    padding: 18px 0;
+  }
+
+  .music-track-heading {
+    gap: 10px;
+  }
+
+  .music-track-heading .music-track-title {
+    font-size: 13px;
+  }
+
+  .music-track-player {
+    padding-left: 0;
+    gap: 12px;
+  }
+
+  .music-player-details .music-preview-controls {
+    gap: 7px;
+  }
+}
