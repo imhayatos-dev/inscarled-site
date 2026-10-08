@@ -46,21 +46,30 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    type: "website",
-    locale: "ja_JP",
-    url: siteUrl,
-    siteName: "inScarled",
-    title: "inScarled（インスカーレッド）| Official Website",
-    description:
-      "青森を拠点に活動するオルタナティブロックバンド、inScarled（インスカーレッド）。ライブ情報、楽曲、ニュースを公開中。",
-  },
+  type: "website",
+  locale: "ja_JP",
+  url: "https://inscarled-site.vercel.app/",
+  siteName: "inScarled Official Website",
+  title: "inScarled（インスカーレッド）| Official Website",
+  description:
+    "青森を拠点に活動するオルタナティブロックバンド、inScarledの公式サイト。",
+  images: [
+    {
+      url: "/og-image.png",
+      width: 1200,
+      height: 630,
+      alt: "inScarled Official Website",
+    },
+  ],
+},
 
-  twitter: {
-    card: "summary",
-    title: "inScarled（インスカーレッド）| Official Website",
-    description:
-      "青森を拠点に活動するオルタナティブロックバンド、inScarledの公式サイト。",
-  },
+twitter: {
+  card: "summary_large_image",
+  title: "inScarled（インスカーレッド）| Official Website",
+  description:
+    "青森を拠点に活動するオルタナティブロックバンド、inScarledの公式サイト。",
+  images: ["/og-image.png"],
+},
 
   robots: {
     index: true,
