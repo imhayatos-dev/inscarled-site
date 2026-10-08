@@ -18,6 +18,10 @@ const siteUrl = "https://inscarled-site.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
+  verification: {
+  google: "HsbW2y1hnD9Hs5rseUOrM4evmPChJxcDbrnqrVStGiM",
+},
+
   title: {
     default: "inScarled（インスカーレッド）| Official Website",
     template: "%s | inScarled Official Website",
